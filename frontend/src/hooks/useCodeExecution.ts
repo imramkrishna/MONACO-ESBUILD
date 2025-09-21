@@ -14,7 +14,6 @@ export function useCodeExecution() {
             // Using Function constructor to create a new function from the code string
             const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
             const func = new AsyncFunction('console', code);
-
             const consoleMock = {
                 log: (msg: any) => {
                     setOutput(prev => prev + msg + '\n');
